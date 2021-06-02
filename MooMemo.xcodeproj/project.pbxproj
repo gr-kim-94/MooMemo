@@ -13,6 +13,8 @@
 		F4EC963D265FEA6900CCD43F /* MooMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4EC963B265FEA6900CCD43F /* MooMemo.xcdatamodeld */; };
 		F4EC963F265FEA6A00CCD43F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EC963E265FEA6A00CCD43F /* Assets.xcassets */; };
 		F4EC9642265FEA6A00CCD43F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EC9640265FEA6A00CCD43F /* LaunchScreen.storyboard */; };
+		F4EC964B265FF9F500CCD43F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC964A265FF9F500CCD43F /* Model.swift */; };
+		F4EC964D265FFB4700CCD43F /* MemoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC964C265FFB4700CCD43F /* MemoListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		F4EC963E265FEA6A00CCD43F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4EC9641265FEA6A00CCD43F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4EC9643265FEA6A00CCD43F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4EC964A265FF9F500CCD43F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F4EC964C265FFB4700CCD43F /* MemoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		F4EC9631265FEA6900CCD43F /* MooMemo */ = {
 			isa = PBXGroup;
 			children = (
+				F4EC9649265FF9C600CCD43F /* Model */,
 				F4EC9632265FEA6900CCD43F /* AppDelegate.swift */,
 				F4EC9634265FEA6900CCD43F /* SceneDelegate.swift */,
 				F4EC9638265FEA6900CCD43F /* Main.storyboard */,
@@ -63,8 +68,17 @@
 				F4EC9640265FEA6A00CCD43F /* LaunchScreen.storyboard */,
 				F4EC9643265FEA6A00CCD43F /* Info.plist */,
 				F4EC963B265FEA6900CCD43F /* MooMemo.xcdatamodeld */,
+				F4EC964C265FFB4700CCD43F /* MemoListTableViewController.swift */,
 			);
 			path = MooMemo;
+			sourceTree = "<group>";
+		};
+		F4EC9649265FF9C600CCD43F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4EC964A265FF9F500CCD43F /* Model.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +153,9 @@
 			files = (
 				F4EC963D265FEA6900CCD43F /* MooMemo.xcdatamodeld in Sources */,
 				F4EC9633265FEA6900CCD43F /* AppDelegate.swift in Sources */,
+				F4EC964D265FFB4700CCD43F /* MemoListTableViewController.swift in Sources */,
 				F4EC9635265FEA6900CCD43F /* SceneDelegate.swift in Sources */,
+				F4EC964B265FF9F500CCD43F /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
