@@ -10,7 +10,15 @@ import UIKit
 class DetailViewController: UIViewController {
     
     var memo: Memo?
-
+    
+    let formatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateStyle = .long
+        f.timeStyle = .short
+        f.locale = Locale(identifier: "Ko_kr")
+        return f
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,6 +54,9 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             // Date
             let cell = tableView.dequeueReusableCell(withIdentifier: "DateCell", for: indexPath)
+            // string(from: Date) 는 옵셔널 사용 불가 -> 옵셔널 바인딩을 사용하거나 string(for: Any?) 사용
+            // memo가 현재 옵셔널이므로 string(for: Any?) 사용
+            cell.textLabel?.text = formatter.string(for: memo?.insertDate)
             return cell;
         default:
             fatalError()
