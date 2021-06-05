@@ -30,7 +30,7 @@ class MemoListTableViewController: UITableViewController {
             // segue.source segue를 실행하는 화면을 source
             // segue.destination 새롭게 표시되는 화면을 destination
             if let detailVC = segue.destination as? DetailViewController {
-                detailVC.memo = Memo.dummyMemoList[indexPath.row]
+                detailVC.memo = DataManager.shared.memoList[indexPath.row]
             }
         }
     }
@@ -47,21 +47,28 @@ class MemoListTableViewController: UITableViewController {
         token = NotificationCenter.default.addObserver(forName: NewMemoViewController.newMemoDidInsertNoti, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
             self?.tableView.reloadData()
         }
+        
+        DataManager.shared.fetchMemo()
+        tableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return Memo.dummyMemoList.count
+        return DataManager.shared.memoList.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         // Configure the cell...
-        let target = Memo.dummyMemoList[indexPath.row]
+        let target = DataManager.shared.memoList[indexPath.row]
         cell.textLabel?.text = target.content
-        cell.detailTextLabel?.text = formatter.string(from: target.insertDate)
+        cell.detailTextLabel?.text = formatter.string(for: target.insertDate)
 
         return cell
     }

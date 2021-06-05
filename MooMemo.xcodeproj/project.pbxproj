@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4ABC607266BCD3300A8B247 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ABC606266BCD3300A8B247 /* DataManager.swift */; };
 		F4EC9633265FEA6900CCD43F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC9632265FEA6900CCD43F /* AppDelegate.swift */; };
 		F4EC9635265FEA6900CCD43F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC9634265FEA6900CCD43F /* SceneDelegate.swift */; };
 		F4EC963A265FEA6900CCD43F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EC9638265FEA6900CCD43F /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F4ABC606266BCD3300A8B247 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F4EC962F265FEA6900CCD43F /* MooMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MooMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EC9632265FEA6900CCD43F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4EC9634265FEA6900CCD43F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F4ABC605266BCD1500A8B247 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F4ABC606266BCD3300A8B247 /* DataManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		F4EC9626265FEA6900CCD43F = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 		F4EC9631265FEA6900CCD43F /* MooMemo */ = {
 			isa = PBXGroup;
 			children = (
+				F4ABC605266BCD1500A8B247 /* Data */,
 				F4EC96532667609900CCD43F /* Class */,
 				F4EC965026675C0900CCD43F /* Util */,
 				F4EC9649265FF9C600CCD43F /* Model */,
@@ -183,6 +194,7 @@
 				F4EC9635265FEA6900CCD43F /* SceneDelegate.swift in Sources */,
 				F4EC964B265FF9F500CCD43F /* Model.swift in Sources */,
 				F4EC965226675C2500CCD43F /* UIViewController+Alert.swift in Sources */,
+				F4ABC607266BCD3300A8B247 /* DataManager.swift in Sources */,
 				F4EC9655266760BA00CCD43F /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
