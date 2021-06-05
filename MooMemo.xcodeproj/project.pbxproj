@@ -16,6 +16,8 @@
 		F4EC964B265FF9F500CCD43F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC964A265FF9F500CCD43F /* Model.swift */; };
 		F4EC964D265FFB4700CCD43F /* MemoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC964C265FFB4700CCD43F /* MemoListTableViewController.swift */; };
 		F4EC964F26675A9E00CCD43F /* NewMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC964E26675A9E00CCD43F /* NewMemoViewController.swift */; };
+		F4EC965226675C2500CCD43F /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC965126675C2500CCD43F /* UIViewController+Alert.swift */; };
+		F4EC9655266760BA00CCD43F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC9654266760BA00CCD43F /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		F4EC964A265FF9F500CCD43F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		F4EC964C265FFB4700CCD43F /* MemoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListTableViewController.swift; sourceTree = "<group>"; };
 		F4EC964E26675A9E00CCD43F /* NewMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMemoViewController.swift; sourceTree = "<group>"; };
+		F4EC965126675C2500CCD43F /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		F4EC9654266760BA00CCD43F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 		F4EC9631265FEA6900CCD43F /* MooMemo */ = {
 			isa = PBXGroup;
 			children = (
+				F4EC96532667609900CCD43F /* Class */,
+				F4EC965026675C0900CCD43F /* Util */,
 				F4EC9649265FF9C600CCD43F /* Model */,
 				F4EC9632265FEA6900CCD43F /* AppDelegate.swift */,
 				F4EC9634265FEA6900CCD43F /* SceneDelegate.swift */,
@@ -70,8 +76,6 @@
 				F4EC9640265FEA6A00CCD43F /* LaunchScreen.storyboard */,
 				F4EC9643265FEA6A00CCD43F /* Info.plist */,
 				F4EC963B265FEA6900CCD43F /* MooMemo.xcdatamodeld */,
-				F4EC964C265FFB4700CCD43F /* MemoListTableViewController.swift */,
-				F4EC964E26675A9E00CCD43F /* NewMemoViewController.swift */,
 			);
 			path = MooMemo;
 			sourceTree = "<group>";
@@ -82,6 +86,24 @@
 				F4EC964A265FF9F500CCD43F /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F4EC965026675C0900CCD43F /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				F4EC965126675C2500CCD43F /* UIViewController+Alert.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		F4EC96532667609900CCD43F /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				F4EC964C265FFB4700CCD43F /* MemoListTableViewController.swift */,
+				F4EC964E26675A9E00CCD43F /* NewMemoViewController.swift */,
+				F4EC9654266760BA00CCD43F /* DetailViewController.swift */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +182,8 @@
 				F4EC964F26675A9E00CCD43F /* NewMemoViewController.swift in Sources */,
 				F4EC9635265FEA6900CCD43F /* SceneDelegate.swift in Sources */,
 				F4EC964B265FF9F500CCD43F /* Model.swift in Sources */,
+				F4EC965226675C2500CCD43F /* UIViewController+Alert.swift in Sources */,
+				F4EC9655266760BA00CCD43F /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

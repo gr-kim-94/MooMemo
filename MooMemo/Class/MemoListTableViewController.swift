@@ -8,6 +8,8 @@
 import UIKit
 
 class MemoListTableViewController: UITableViewController {
+    var token: NSObjectProtocol?
+    
     let formatter: DateFormatter = {
         let f = DateFormatter()
         f.dateStyle = .long
@@ -15,6 +17,23 @@ class MemoListTableViewController: UITableViewController {
         f.locale = Locale(identifier: "Ko_kr")
         return f
     }()
+    
+    deinit {
+        if let token = token {
+            NotificationCenter.default.removeObserver(token)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // segue가 연결된 화면을 생성하고, 화면을 전환하기 직전에 호출.
+        if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
+            // segue.source segue를 실행하는 화면을 source
+            // segue.destination 새롭게 표시되는 화면을 destination
+            if let detailVC = segue.destination as? DetailViewController {
+                detailVC.memo = Memo.dummyMemoList[indexPath.row]
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +43,10 @@ class MemoListTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        token = NotificationCenter.default.addObserver(forName: NewMemoViewController.newMemoDidInsertNoti, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
+            self?.tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source
