@@ -9,12 +9,22 @@ import UIKit
 
 class NewMemoViewController: UIViewController {
 
+    var editTarget: Memo?
+    
     @IBOutlet weak var memoTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let memo = editTarget {
+            navigationItem.title = "메모 편집"
+            memoTextView.text = memo.content
+        }
+        else {
+            navigationItem.title = "새 메모"
+            memoTextView.text = ""
+        }
+        
     }
     
     @IBAction func close(_ sender: Any) {
@@ -27,9 +37,17 @@ class NewMemoViewController: UIViewController {
             return
         }
         
-        DataManager.shared.addNewMemo(memo)
-        
-        NotificationCenter.default.post(name: NewMemoViewController.newMemoDidInsertNoti, object: nil)
+        if editTarget != nil {
+            // 메모편집
+            editTarget?.content = memo
+            DataManager.shared.saveContext()
+            NotificationCenter.default.post(name: NewMemoViewController.editMemoDidChageNoti, object: nil)
+        }
+        else {
+            // 새메모
+            DataManager.shared.addNewMemo(memo)
+            NotificationCenter.default.post(name: NewMemoViewController.newMemoDidInsertNoti, object: nil)
+        }
         dismiss(animated: true, completion: nil)
     }
     
@@ -47,4 +65,5 @@ class NewMemoViewController: UIViewController {
 
 extension NewMemoViewController {
     static let newMemoDidInsertNoti = Notification.Name(rawValue: "newMemoDidInsertNoti")
+    static let editMemoDidChageNoti = Notification.Name(rawValue: "editMemoDidChageNoti")
 }
