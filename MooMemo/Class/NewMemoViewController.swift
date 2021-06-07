@@ -58,12 +58,12 @@ class NewMemoViewController: UIViewController {
             // 메모편집
             editTarget?.content = memo
             DataManager.shared.saveContext()
-            NotificationCenter.default.post(name: NewMemoViewController.editMemoDidChageNoti, object: nil)
+            NotificationCenter.default.post(name: NewMemoViewController.editMemoNoti, object: nil)
         }
         else {
             // 새메모
             DataManager.shared.addNewMemo(memo)
-            NotificationCenter.default.post(name: NewMemoViewController.newMemoDidInsertNoti, object: nil)
+            NotificationCenter.default.post(name: NewMemoViewController.newMemoNoti, object: nil)
         }
         dismiss(animated: true, completion: nil)
     }
@@ -108,6 +108,6 @@ extension NewMemoViewController: UITextViewDelegate {
 }
 
 extension NewMemoViewController {
-    static let newMemoDidInsertNoti = Notification.Name(rawValue: "newMemoDidInsertNoti")
-    static let editMemoDidChageNoti = Notification.Name(rawValue: "editMemoDidChageNoti")
+    static let newMemoNoti = Notification.Name(rawValue: "newMemoNoti")
+    static let editMemoNoti = Notification.Name(rawValue: "editMemoNoti")
 }

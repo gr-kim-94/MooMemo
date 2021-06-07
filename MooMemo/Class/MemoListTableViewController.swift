@@ -44,7 +44,10 @@ class MemoListTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        token = NotificationCenter.default.addObserver(forName: NewMemoViewController.newMemoDidInsertNoti, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
+        token = NotificationCenter.default.addObserver(forName: NewMemoViewController.newMemoNoti, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
+            self?.tableView.reloadData()
+        }
+        token = NotificationCenter.default.addObserver(forName: DetailViewController.deleteMemoNoti, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
             self?.tableView.reloadData()
         }
         
