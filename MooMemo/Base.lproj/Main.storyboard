@@ -86,6 +86,12 @@
                                             <segue destination="f0u-IN-abm" kind="presentation" id="i9n-AD-VKG"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="WWI-uW-vOV"/>
+                                    <barButtonItem systemItem="action" id="iLi-8S-iwQ">
+                                        <connections>
+                                            <action selector="shareMemo:" destination="383-vN-mkC" id="hKI-sd-B8U"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M0s-fk-8aj">
