@@ -8,7 +8,8 @@
 import UIKit
 
 class MemoListTableViewController: UITableViewController {
-    var token: NSObjectProtocol?
+    var newMemoToken: NSObjectProtocol?
+    var deleteMemoToken: NSObjectProtocol?
     
     let formatter: DateFormatter = {
         let f = DateFormatter()
@@ -19,7 +20,10 @@ class MemoListTableViewController: UITableViewController {
     }()
     
     deinit {
-        if let token = token {
+        if let token = newMemoToken {
+            NotificationCenter.default.removeObserver(token)
+        }
+        if let token = deleteMemoToken {
             NotificationCenter.default.removeObserver(token)
         }
     }
@@ -44,10 +48,10 @@ class MemoListTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        token = NotificationCenter.default.addObserver(forName: NewMemoViewController.newMemoNoti, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
+        newMemoToken = NotificationCenter.default.addObserver(forName: NewMemoViewController.newMemoNoti, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
             self?.tableView.reloadData()
         }
-        token = NotificationCenter.default.addObserver(forName: DetailViewController.deleteMemoNoti, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
+        deleteMemoToken = NotificationCenter.default.addObserver(forName: DetailViewController.deleteMemoNoti, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
             self?.tableView.reloadData()
         }
         
